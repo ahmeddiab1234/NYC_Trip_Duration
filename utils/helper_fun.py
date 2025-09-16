@@ -24,7 +24,7 @@ def load_x_t(df:pd.DataFrame):
     return df, x,y
 
 def split_data(x,t, split_sz=0.2):
-    x_train, x_val, t_train, t_val = train_test_split(x,t, test_size=split_sz, random_state=RANDOM_STATE, stratify=t)
+    x_train, x_val, t_train, t_val = train_test_split(x,t, test_size=split_sz, random_state=RANDOM_STATE)
     return x_train, x_val, t_train, t_val
 
 
@@ -50,6 +50,15 @@ def load_config():
     with open('config.yaml', 'r') as file:
         config = yaml.safe_load(file)
     return config
+
+
+def log_result(text, name='linear_regression', filename=None):
+    if filename is None:
+        filename=fr'NYC_Trip_Duration/logs/model_results_{name}.txt'
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
+
+    with open(filename, 'a') as f:
+        f.write(text+'\n')
 
 
 if __name__=='__main__':

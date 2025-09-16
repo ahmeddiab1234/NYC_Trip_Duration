@@ -63,7 +63,7 @@ class Modify_Data():
         self.df['year'] = self.df['pickup_datetime'].dt.year
         self.df['month'] = self.df['pickup_datetime'].dt.month
         self.df['hour'] = self.df['pickup_datetime'].dt.hour
-        self.df['day_name'] = self.df['pickup_datetime'].dt.day_name()
+        self.df['day_of_week'] = self.df['pickup_datetime'].dt.dayofweek
 
         def getseason(month):
             if 4<=month<=7:
@@ -105,12 +105,11 @@ class Modify_Data():
         return self.df
     
 
-    def best_ten_features(self):
-        columns = ['haversine_distanc','pickup_longitude', 'dropoff_longitude'
-                    ,'pickup_datetime','month`,`pickup_latitude',  
-                    'dropoff_latitude','longitude`,`season_encoder']
+    def best_8_features(self):
+        self.df = self.df[['haversine_distance','dropoff_longitude', 'pickup_longitude'
+                    ,'month','dropoff_latitude',  
+                    'pickup_latitude','season','trip_duration']]
 
-        self.df = self.df[columns]
         return self.df
 
 
@@ -134,7 +133,7 @@ class Preprocessing_Pipeling():
         if calculate_haversine:
             df = modify.calculate_haversine()
         if best_ten_features:
-            df = modify.best_ten_features()
+            df = modify.best_8_features()
         return df
 
 
@@ -142,8 +141,8 @@ class Preprocessing_Pipeling():
         poly = PolynomialFeatures(degree=degree, include_bias=include_bias)
         x = poly.fit_transform(x)
 
-        if self.x_val is not None:
-            self.x_val = poly.transform(x_val)
+        if x_val is not None:
+            x_val = poly.transform(x_val)
             return x, x_val
         return x
 
@@ -162,7 +161,7 @@ class Preprocessing_Pipeling():
                 return None, x
         
         x = scaler.fit_transform(x)
-        if x_val:
+        if x_val is not None:
             x_val = scaler.transform(x_val)
             return scaler, x, x_val
         return scaler, x
@@ -177,12 +176,14 @@ if __name__=='__main__':
     
     df, x,t = load_x_t(df)
     print(x.shape, t.shape) # (1000000, 14) (1000000,)
-    # x_train, x_val, t_train, t_val = split_data(x, t, 0.2) 
+    x_train, x_val, t_train, t_val = split_data(x, t, 0.2) 
 
-    x = preprocess_pipeline.polynomial_feature(x, None, 2, True)
-    scaler, x = preprocess_pipeline.scaling(x,None, 1)
-    print(x.shape, t.shape)
+    x_train, x_val = preprocess_pipeline.polynomial_feature(x_train, x_val, 2, True)
+    scaler, x_train, x_val = preprocess_pipeline.scaling(x_train,x_val, 1)
+    # print(x.shape, t.shape) # all data (1000000, 105) (1000000,)
+    # print(x.shape, t.shape) # best 7 features (1000000, 36) (1000000,)
+
+
+    print(x_train.shape, x_val.shape, t_train.shape, t_val.shape) # (800000, 105) (200000, 105) (800000,) (200000,)
     
-
-    pass
 
