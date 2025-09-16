@@ -54,7 +54,7 @@ def load_config():
 
 def log_result(text, name='linear_regression', filename=None):
     if filename is None:
-        filename=fr'NYC_Trip_Duration/logs/model_results_{name}.txt'
+        filename=fr'logs/model_results_{name}.txt'
     os.makedirs(os.path.dirname(filename), exist_ok=True)
 
     with open(filename, 'a') as f:

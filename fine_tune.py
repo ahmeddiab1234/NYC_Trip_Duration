@@ -32,15 +32,18 @@ class PrepareData():
     
 
 class Train():
-    def __init__(self):
-        pass
+    def __init__(self,x_train, x_val, t_train, t_val):
+        self.x_train=x_train
+        self.x_val=x_val
+        self.t_train=t_train
+        self.t_val=t_val
 
-    def try_linear_regression(x_train, x_val, t_train, t_val):
-        model = LinearRegression(fit_intercept=True)
-        model.fit(x_train, t_train)
+    def try_linear_regression(self, fit_intercept=True):
+        model = LinearRegression(fit_intercept=fit_intercept)
+        model.fit(self.x_train, self.t_train)
         log_result(f'Training Path', 'LinearRegression')
-        log_result(f'Weights: {model.coef_}')
-        log_result(f'Intercept: {model.intercept_}')
+        # log_result(f'Weights: {model.coef_}')
+        # log_result(f'Intercept: {model.intercept_}')
 
         train_score,train_error = eval_model(model,x_train,t_train, 'train')
         val_score,val_error = eval_model(model,x_val,t_val, 'val')
@@ -48,11 +51,11 @@ class Train():
         log_result(f'R2-score for Train: {train_score}','LinearRegression')
         log_result(f'MSE for Val: {val_error}','LinearRegression')
         log_result(f'R2-score for Val: {val_score}','LinearRegression')
-        log_result('--'*100,'LinearRegression')
+        log_result('--'*40,'LinearRegression')
         return model 
 
 
-    def try_ridge(x_train, x_val, t_train, t_val):
+    def try_ridge(self):
         best_val_score,best_mse = float('-inf'),float('inf')
         best_param = {'best_alpha':0.1, 'best_fit':True}
 
@@ -85,7 +88,7 @@ class Train():
         log_result(f'best val score is {best_val_score} with mse error {best_mse}', name='Ridge')
 
 
-    def try_neural_network(x_train, x_val, t_train, t_val):
+    def try_neural_network(self):
         hidden_layers_list = [(32, 16), (64, 32, 16)]
         solvers = ['adam']
         lr_init_list = [0.001, 0.01]
@@ -141,7 +144,7 @@ class Train():
 
 
 
-    def try_xgboost(x_train, x_val, t_train, t_val):
+    def try_xgboost(self):
         n_estimators_lst = [100, 300]
         lrs = [0.05, 0.1]
         max_depth_lst = [3, 6]
@@ -190,21 +193,25 @@ def eval_model(model, x, t, name='val'):
     pred = model.predict(x)
     mse_error = mean_squared_error(t, pred)
     r2score = r2_score(t, pred)
-    return mse_error,r2score
-
-
-
+    return r2score,mse_error
 
 
 if __name__ == '__main__':
     prepare = PrepareData(TRAIN_PATH)
-    df = prepare.modify_data_(True, False, True, False)
+    df = prepare.modify_data_(True, True, True, False)
     df, x, t = load_x_t(df)
     x_train, x_val, t_train, t_val = split_data(x,t)
 
-    x_train, x_val = prepare.polynomial_feature_(x_train, x_val,1,True)
-    _, x_train, x_val = prepare.scaling_(x_train, x_val, 1)
+    poly_degree = [1,2,3]
+    
+    for deg in poly_degree:
 
+        x_train, x_val = prepare.polynomial_feature_(x_train, x_val,deg,True)
+        _, x_train, x_val = prepare.scaling_(x_train, x_val, 2)
+
+        train = Train(x_train, x_val, t_train, t_val)
+        log_result(f'Polynomial Degree {deg}','LinearRegression')
+        model = train.try_linear_regression(True)
 
 
     print("Successful")

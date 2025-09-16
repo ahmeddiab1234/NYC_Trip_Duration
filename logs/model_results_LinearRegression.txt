@@ -1,0 +1,70 @@
+Apply Log on trip duration: True
+Training Path
+MSE for Train: 2.115629425092874
+R2-score for Train: 0.584513781899977
+MSE for Val: 2.1221997384025775
+R2-score for Val: 0.5809634800671173
+--------------------------------------------------------------------------------
+Apply Log on trip duration: False
+Training Path
+MSE for Train: 2.1166192054111965
+R2-score for Train: 0.5843193999934237
+MSE for Val: 2.123423170214792
+R2-score for Val: 0.5807219087391746
+--------------------------------------------------------------------------------
+Apply Log on trip duration: True, and Best Features: True
+Training Path
+MSE for Train: 117565.85945200756
+R2-score for Train: 0.578777942086303
+MSE for Val: 118410.94266114723
+R2-score for Val: 0.5766273561520396
+--------------------------------------------------------------------------------
+Apply Log on trip duration: True, and Best Features: False
+Training Path
+MSE for Train: 2.115629425092874
+R2-score for Train: 0.584513781899977
+MSE for Val: 2.1221997384025775
+R2-score for Val: 0.5809634800671173
+--------------------------------------------------------------------------------
+Apply Log on trip duration: False, and Best Features: True
+Training Path
+MSE for Train: 117565.85945200756
+R2-score for Train: 0.578777942086303
+MSE for Val: 118410.94266114723
+R2-score for Val: 0.5766273561520396
+--------------------------------------------------------------------------------
+Apply Log on trip duration: False, and Best Features: False
+Training Path
+MSE for Train: 2.1166192054111965
+R2-score for Train: 0.5843193999934237
+MSE for Val: 2.123423170214792
+R2-score for Val: 0.5807219087391746
+--------------------------------------------------------------------------------
+Drop Outlier: True
+Training Path
+MSE for Train: 2.115629425092874
+R2-score for Train: 0.584513781899977
+MSE for Val: 2.1221997384025775
+R2-score for Val: 0.5809634800671173
+--------------------------------------------------------------------------------
+Drop Outlier: False
+Training Path
+MSE for Train: 12.15272093661319
+R2-score for Train: 0.4043119343529423
+MSE for Val: 17.54979665060669
+R2-score for Val: -0.07895100685474188
+--------------------------------------------------------------------------------
+Polynomial Degree 1
+Training Path
+MSE for Train: 2.115629425092874
+R2-score for Train: 0.584513781899977
+MSE for Val: 2.1221997384025775
+R2-score for Val: 0.5809634800671173
+--------------------------------------------------------------------------------
+Polynomial Degree 2
+Training Path
+MSE for Train: 0.2922188463207549
+R2-score for Train: 0.9426114508168025
+MSE for Val: 0.2928550265013186
+R2-score for Val: 0.9421746459914578
+--------------------------------------------------------------------------------

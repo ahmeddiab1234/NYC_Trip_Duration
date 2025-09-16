@@ -36,7 +36,8 @@ class Modify_Data():
         self.df = df
 
     def drop_id(self):
-        self.df.drop(columns='id',axis=1, inplace=True)
+        if 'id' in self.df.columns:
+            self.df.drop(columns='id',axis=1, inplace=True)
         return self.df
 
 
