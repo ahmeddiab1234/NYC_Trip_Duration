@@ -1,43 +1,188 @@
+"""
+- drop id
+- remove dublicate
+- try to use log or origin trip duration
+- change pickup_datetime to datetime and extract time variation
+- encoding store_and_fwd_flag to int 
+- remove or keep outlier 
+- claculate haversine distance
+
+- try to use all data or first 9 with target
+
+- Scaling (minmax scaler, standar scaler, normalize)
+- polynomial feature
+
+
+"""
+
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
-import pandas as pd
-from utilis.helper import  normal_process
-
-def apply_log(feature):
-    feature = np.log1p(feature)
-    return feature
-
-def label_encoding(data, features):
-    le = LabelEncoder()
-    for feat in features:
-        data[feat] = le.fit_transform(data[feat])
+import pandas as pd 
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, Normalizer
+from utils.helper_fun import *
 
 
-def calc_longitude_latitude(data):
-    data['latitude'] = data['dropoff_latitude']-data['pickup_latitude']
-    data['longitude'] = data['dropoff_longitude']-data['pickup_longitude']
+TRAIN_PATH = 'split/train.csv'
 
 
-def pickup_datetime_process(data):
-    data['pickup_datetime'] = pd.to_datetime(data['pickup_datetime'])
-    data['month'] = data['pickup_datetime'].dt.month
-    data['day'] = data['pickup_datetime'].dt.day
-    data['hour'] = data['pickup_datetime'].dt.hour
+class Modify_Data():
+    def __init__(self, df:pd.DataFrame):
+        self.df = df
 
-    def getseason(month):
-        if 4<=month<=7:
-            return 'Sprint'
-        elif 8<=month<=10:
-            return 'Summar'
-        elif 11<=month<=12:
-            return 'Fall'
+    def drop_id(self):
+        self.df.drop(columns='id',axis=1, inplace=True)
+        return self.df
+
+
+    def drop_outlier(self):
+        columns = self.df.select_dtypes(include=np.number).columns
+
+        for col in columns:
+            q1 = self.df[col].quantile(0.25)
+            q3 = self.df[col].quantile(0.75)
+            iqr = q3-q1
+            lower = q1-1.5*iqr
+            upper = q3+1.5*iqr
+            self.df[col] = self.df[col].clip(lower, upper)
+        return self.df
+
+
+    def apply_log(self):
+        self.df['log_trip_duration'] = np.log1p(self.df['trip_duration'])
+        return self.df
+
+
+    def change_datetime(self):
+        self.df['pickup_datetime'] = pd.to_datetime(self.df['pickup_datetime'])
+        self.df['year'] = self.df['pickup_datetime'].dt.year
+        self.df['month'] = self.df['pickup_datetime'].dt.month
+        self.df['hour'] = self.df['pickup_datetime'].dt.hour
+        self.df['day_name'] = self.df['pickup_datetime'].dt.day_name()
+
+        def getseason(month):
+            if 4<=month<=7:
+                return 'Sprint'
+            elif 8<=month<=10:
+                return 'Summar'
+            elif 11<=month<=12:
+                return 'Fall'
+            else:
+                return 'Winter'
+
+        self.df['season'] = self.df['pickup_datetime'].dt.month.apply(getseason)
+        self.df['season'] = LabelEncoder().fit_transform(self.df['season'])
+        self.df.drop(columns='pickup_datetime', axis=1, inplace=True)
+
+        return self.df
+    
+
+    def encode_store_fwd_flag(self):
+        feat = 'store_and_fwd_flag'
+        le = LabelEncoder()
+        self.df[feat] = le.fit_transform(self.df[feat])
+        return self.df
+
+
+    def calculate_haversine(self):
+        def haversine(lat1, lon1, lat2, lon2):
+            R = 6371.0  
+            lat1, lon1, lat2, lon2 = map(np.radians, [lat1,lon1,lat2,lon2])
+            dlat = lat2-lat1
+            dlon = lon2-lon1
+
+            a = np.sin(dlat/2)**2 + np.cos(lat1)*np.cos(lat2)*(np.sin(dlon/2)**2)
+
+            d = 2*R*np.arcsin(np.sqrt(a))
+            return d
+        
+        self.df['haversine_distance'] = haversine(self.df['pickup_latitude'], self.df['pickup_longitude'],self.df['dropoff_latitude'],self.df['dropoff_longitude'])
+        return self.df
+    
+
+    def best_ten_features(self):
+        columns = ['haversine_distanc','pickup_longitude', 'dropoff_longitude'
+                    ,'pickup_datetime','month`,`pickup_latitude',  
+                    'dropoff_latitude','longitude`,`season_encoder']
+
+        self.df = self.df[columns]
+        return self.df
+
+
+
+class Preprocessing_Pipeling():
+    def __init__(self):
+        pass
+
+    def apply_modify_data(self, df:pd.DataFrame,drop_outlier=True, apply_log=True, calculate_haversine=True, best_ten_features=True):
+
+        modify = Modify_Data(df)
+
+        df = modify.drop_id()
+        df = modify.change_datetime()
+        df = modify.encode_store_fwd_flag()
+
+        if drop_outlier:
+            df = modify.drop_outlier()
+        if apply_log:
+            df = modify.apply_log()
+        if calculate_haversine:
+            df = modify.calculate_haversine()
+        if best_ten_features:
+            df = modify.best_ten_features()
+        return df
+
+
+    def polynomial_feature(self, x:pd.DataFrame, x_val=None, degree=2, include_bias=True):
+        poly = PolynomialFeatures(degree=degree, include_bias=include_bias)
+        x = poly.fit_transform(x)
+
+        if self.x_val is not None:
+            self.x_val = poly.transform(x_val)
+            return x, x_val
+        return x
+
+
+    def scaling(self, x:pd.DataFrame, x_val=None, option=1):
+        if option == 1:
+            scaler = MinMaxScaler()
+        elif option == 2:
+            scaler = StandardScaler()
+        elif option == 3:
+            scaler = Normalizer()
         else:
-            return 'Winter'
+            if x_val:
+                return None, x,x_val
+            else:
+                return None, x
+        
+        x = scaler.fit_transform(x)
+        if x_val:
+            x_val = scaler.transform(x_val)
+            return scaler, x, x_val
+        return scaler, x
 
-    data['season'] = data['pickup_datetime'].dt.month.apply(getseason)
-    label_encoding(data,['season'])
 
+if __name__=='__main__':
+    df = load_df(TRAIN_PATH)
+    print(df.shape) # (1000000, 10)
 
-def processing_data(x_train,x_val=None, process_option=1,is_monomials_process=False,degree=2):
-    return normal_process(x_train, x_val,process_option, is_monomials_process,degree)
+    preprocess_pipeline = Preprocessing_Pipeling()
+    df = preprocess_pipeline.apply_modify_data(df, True, False, True, False) 
+    
+    df, x,t = load_x_t(df)
+    print(x.shape, t.shape) # (1000000, 14) (1000000,)
+    # x_train, x_val, t_train, t_val = split_data(x, t, 0.2) 
+
+    x = preprocess_pipeline.polynomial_feature(x, None, 2, True)
+    scaler, x = preprocess_pipeline.scaling(x,None, 1)
+    print(x.shape, t.shape)
+    
+
+    pass
 
