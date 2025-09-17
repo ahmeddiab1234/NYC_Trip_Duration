@@ -41,17 +41,17 @@ class Train():
     def try_linear_regression(self, fit_intercept=True):
         model = LinearRegression(fit_intercept=fit_intercept)
         model.fit(self.x_train, self.t_train)
-        log_result(f'Training Path', 'LinearRegression')
+        # log_result(f'Training Path', 'LinearRegression')
         # log_result(f'Weights: {model.coef_}')
         # log_result(f'Intercept: {model.intercept_}')
 
         train_score,train_error = eval_model(model,x_train,t_train, 'train')
         val_score,val_error = eval_model(model,x_val,t_val, 'val')
-        log_result(f'MSE for Train: {train_error}','LinearRegression')
-        log_result(f'R2-score for Train: {train_score}','LinearRegression')
-        log_result(f'MSE for Val: {val_error}','LinearRegression')
-        log_result(f'R2-score for Val: {val_score}','LinearRegression')
-        log_result('--'*40,'LinearRegression')
+        # log_result(f'MSE for Train: {train_error}','LinearRegression')
+        # log_result(f'R2-score for Train: {train_score}','LinearRegression')
+        # log_result(f'MSE for Val: {val_error}','LinearRegression')
+        # log_result(f'R2-score for Val: {val_score}','LinearRegression')
+        # log_result('--'*40,'LinearRegression')
         return model 
 
 
@@ -71,9 +71,10 @@ class Train():
         # log_result(f'parameters: alpha = {alpha}, fit-intercept = {fit_intercept}', name='Ridge')
         # log_result('--'*40, name='Ridge')
 
+        return model
 
     def try_neural_network(self, hidden_layers=(16,8), solver='adam', init_lr=0.01, max_iter=500, early_stopping=False, alpha=0.0001):
-        log_result(f'Training Path', 'Neural_Network')
+        # log_result(f'Training Path', 'Neural_Network')
         model = nnr(
             hidden_layer_sizes=hidden_layers,
             activation='identity',
@@ -90,26 +91,28 @@ class Train():
         train_score, train_error = eval_model(model, x_train, t_train, 'train')
         val_score, val_error = eval_model(model, x_val, t_val, 'val')
 
-        log_result(f'Score train: {train_score}', name='Neural_Network')
-        log_result(f'MSE train: {train_error}', name='Neural_Network')
-        log_result(f'Score val: {val_score}', name='Neural_Network')
-        log_result(f'MSE val: {val_error}', name='Neural_Network')
+        # log_result(f'Score train: {train_score}', name='Neural_Network')
+        # log_result(f'MSE train: {train_error}', name='Neural_Network')
+        # log_result(f'Score val: {val_score}', name='Neural_Network')
+        # log_result(f'MSE val: {val_error}', name='Neural_Network')
 
-        current_params = {
-            'hidden_layers': hidden_layers,
-            'solver': solver,
-            'learning_rate_init': init_lr,
-            'max_iter': max_iter,
-            'early_stopping': early_stopping,
-            'alpha': alpha
-        }
+        # current_params = {
+        #     'hidden_layers': hidden_layers,
+        #     'solver': solver,
+        #     'learning_rate_init': init_lr,
+        #     'max_iter': max_iter,
+        #     'early_stopping': early_stopping,
+        #     'alpha': alpha
+        # }
 
-        log_result(f'Parameters: {current_params}', name='Neural_Network')
-        log_result('--'*40, name='Neural_Network')
+        # log_result(f'Parameters: {current_params}', name='Neural_Network')
+        # log_result('--'*40, name='Neural_Network')
+
+        return model
 
 
     def try_xgboost(self, n_estimators=100, learning_rate=0.05, max_depth=5,min_child_weight=3,gamma=0,reg_alpha=1, reg_lambda=0):
-        log_result(f'Training Path', 'XGboost')
+        # log_result(f'Training Path', 'XGboost')
 
         model = XGBRegressor(
             n_estimators=n_estimators,
@@ -126,22 +129,23 @@ class Train():
         train_score, train_error = eval_model(model, x_train, t_train, 'train')
         val_score, val_error = eval_model(model, x_val, t_val, 'val')
 
-        log_result(f'MSE for Train: {train_error}', name='XGboost')
-        log_result(f'R2-score for Train: {train_score}', name='XGboost')
-        log_result(f'MSE for Val: {val_error}', name='XGboost')
-        log_result(f'R2-score for Val: {val_score}', name='XGboost')
-        param = {
-            'n_estimators': n_estimators,
-            'learning_rate': learning_rate,
-            'max_depth': max_depth,
-            'min_child_weight': min_child_weight,
-            'gamma': gamma,
-            'reg_alpha': reg_alpha,
-            'reg_lambda': reg_lambda
-        }
-        log_result(f'parameters: {str(param)}', name='XGboost')
-        log_result('--'*40, name='XGboost')
+        # log_result(f'MSE for Train: {train_error}', name='XGboost')
+        # log_result(f'R2-score for Train: {train_score}', name='XGboost')
+        # log_result(f'MSE for Val: {val_error}', name='XGboost')
+        # log_result(f'R2-score for Val: {val_score}', name='XGboost')
+        # param = {
+        #     'n_estimators': n_estimators,
+        #     'learning_rate': learning_rate,
+        #     'max_depth': max_depth,
+        #     'min_child_weight': min_child_weight,
+        #     'gamma': gamma,
+        #     'reg_alpha': reg_alpha,
+        #     'reg_lambda': reg_lambda
+        # }
+        # log_result(f'parameters: {str(param)}', name='XGboost')
+        # log_result('--'*40, name='XGboost')
 
+        return model
 
 
 
@@ -158,11 +162,12 @@ if __name__ == '__main__':
     df, x, t = load_x_t(df)
     x_train, x_val, t_train, t_val = split_data(x,t)
 
-    x_train, x_val = prepare.polynomial_feature_(x_train, x_val,2,True)
+    poly, x_train, x_val = prepare.polynomial_feature_(x_train, x_val,2,True)
+    scaler, x_train, x_val = prepare.scaling_(x_train, x_val, 2)
 
     train =Train(x_train, x_val, t_train, t_val)
-    model = train.try_xgboost(300, 0.1,9,3,0,1,0)
-    save_model(model, 'XGboost', 'val')
+    model = train.try_linear_regression(True)
+    save_model(model, poly, scaler, 'LinearRegression', 'val')
 
 
     print("Successful")

@@ -144,11 +144,11 @@ class Preprocessing_Pipeling():
 
         if x_val is not None:
             x_val = poly.transform(x_val)
-            return x, x_val
-        return x
+            return poly, x, x_val
+        return poly, x
 
 
-    def scaling(self, x:pd.DataFrame, x_val=None, option=1):
+    def scaling(self, x:pd.DataFrame, x_val=None, option=1, type='train'):
         if option == 1:
             scaler = MinMaxScaler()
         elif option == 2:
@@ -179,7 +179,7 @@ if __name__=='__main__':
     print(x.shape, t.shape) # (1000000, 14) (1000000,)
     x_train, x_val, t_train, t_val = split_data(x, t, 0.2) 
 
-    x_train, x_val = preprocess_pipeline.polynomial_feature(x_train, x_val, 2, True)
+    poly, x_train, x_val = preprocess_pipeline.polynomial_feature(x_train, x_val, 2, True)
     scaler, x_train, x_val = preprocess_pipeline.scaling(x_train,x_val, 1)
     # print(x.shape, t.shape) # all data (1000000, 105) (1000000,)
     # print(x.shape, t.shape) # best 7 features (1000000, 36) (1000000,)

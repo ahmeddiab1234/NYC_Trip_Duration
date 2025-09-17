@@ -28,9 +28,11 @@ def split_data(x,t, split_sz=0.2):
     return x_train, x_val, t_train, t_val
 
 
-def save_model(model, name='Ridge', type='val'):
+def save_model(model, poly, scaler, name='Ridge', type='val'):
     model_dict = {
         "model": model,
+        "poly": poly,
+        "scaler": scaler
     }
     if type=='val':
         filename = fr'val_pkl/{name}.pkl'
@@ -49,7 +51,7 @@ def load_model(name='Ridge',type='val'):
     with open(filename, 'rb') as f:
         loaded_dict = pickle.load(f)
 
-    return loaded_dict['model']
+    return loaded_dict['model'], loaded_dict['poly'], loaded_dict['scaler']
 
 
 def load_config():
