@@ -1,0 +1,149 @@
+Training Path
+MSE for Train: 0.2456106657420218
+R2-score for Train: 0.9517647819491347
+MSE for Val: 0.2506826047273035
+R2-score for Val: 0.9505017532554644
+parameters: {'n_estimators': 100, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+n-estimator: 50
+Training Path
+MSE for Train: 0.4820469759383105
+R2-score for Train: 0.9053313058498564
+MSE for Val: 0.48895627525008384
+R2-score for Val: 0.9034536984090079
+parameters: {'n_estimators': 50, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+n-estimator: 80
+Training Path
+MSE for Train: 0.28771359767425164
+R2-score for Train: 0.9434962318183967
+MSE for Val: 0.29349370573866174
+R2-score for Val: 0.9420485363137838
+parameters: {'n_estimators': 80, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+n-estimator: 100
+Training Path
+MSE for Train: 0.2456106657420218
+R2-score for Train: 0.9517647819491347
+MSE for Val: 0.2506826047273035
+R2-score for Val: 0.9505017532554644
+parameters: {'n_estimators': 100, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+n-estimator: 150
+Training Path
+MSE for Train: 0.1706636012689973
+R2-score for Train: 0.9664835564217618
+MSE for Val: 0.17420153685676792
+R2-score for Val: 0.9656032349592287
+parameters: {'n_estimators': 150, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+n-estimator: 200
+Training Path
+MSE for Train: 0.13235440602288243
+R2-score for Train: 0.9740070586298882
+MSE for Val: 0.13541243226218116
+R2-score for Val: 0.9732622932026639
+parameters: {'n_estimators': 200, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+n-estimator: 300
+Training Path
+MSE for Train: 0.09528136308628792
+R2-score for Train: 0.9812877941975121
+MSE for Val: 0.09793555826660459
+R2-score for Val: 0.980662246455363
+parameters: {'n_estimators': 300, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Learning rate: 0.1
+Training Path
+MSE for Train: 0.055172335167464365
+R2-score for Train: 0.9891647636345999
+MSE for Val: 0.05707719060820889
+R2-score for Val: 0.9887298886682491
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Learning rate: 0.05
+Training Path
+MSE for Train: 0.09528136308628792
+R2-score for Train: 0.9812877941975121
+MSE for Val: 0.09793555826660459
+R2-score for Val: 0.980662246455363
+parameters: {'n_estimators': 300, 'learning_rate': 0.05, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Learning rate: 0.001
+Training Path
+MSE for Train: 3.29510182074542
+R2-score for Train: 0.35287844954419945
+MSE for Val: 3.2804339821197854
+R2-score for Val: 0.3522656633763659
+parameters: {'n_estimators': 300, 'learning_rate': 0.001, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Max-Depth: 3
+Training Path
+MSE for Train: 0.13893140956829603
+R2-score for Train: 0.9727154078818399
+MSE for Val: 0.14093407940364375
+R2-score for Val: 0.9721720226873176
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 3, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Max-Depth: 5
+Training Path
+MSE for Train: 0.055172335167464365
+R2-score for Train: 0.9891647636345999
+MSE for Val: 0.05707719060820889
+R2-score for Val: 0.9887298886682491
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 5, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Max-Depth: 6
+Training Path
+MSE for Train: 0.035280805939988086
+R2-score for Train: 0.9930712399545667
+MSE for Val: 0.037463234906871055
+R2-score for Val: 0.9926027398379477
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 6, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Max-Depth: 9
+Training Path
+MSE for Train: 0.010584909567260674
+R2-score for Train: 0.9979212408407305
+MSE for Val: 0.01458649409411877
+R2-score for Val: 0.9971198405067084
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 9, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Polynomial degree: 1
+Training Path
+MSE for Train: 0.017315246875562407
+R2-score for Train: 0.9965994770376765
+MSE for Val: 0.021924091852256144
+R2-score for Val: 0.9956710035411778
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 9, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Polynomial degree: 2
+Training Path
+MSE for Train: 0.010584909567260674
+R2-score for Train: 0.9979212408407305
+MSE for Val: 0.01458649409411877
+R2-score for Val: 0.9971198405067084
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 9, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Training Path
+MSE for Train: 0.010584909567260674
+R2-score for Train: 0.9979212408407305
+MSE for Val: 0.01458649409411877
+R2-score for Val: 0.9971198405067084
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 9, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Training Path
+MSE for Train: 0.010584909567260674
+R2-score for Train: 0.9979212408407305
+MSE for Val: 0.01458649409411877
+R2-score for Val: 0.9971198405067084
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 9, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------
+Training Path
+Training Path
+MSE for Train: 0.010584909567260674
+R2-score for Train: 0.9979212408407305
+MSE for Val: 0.01458649409411877
+R2-score for Val: 0.9971198405067084
+parameters: {'n_estimators': 300, 'learning_rate': 0.1, 'max_depth': 9, 'min_child_weight': 3, 'gamma': 0, 'reg_alpha': 1, 'reg_lambda': 0}
+--------------------------------------------------------------------------------

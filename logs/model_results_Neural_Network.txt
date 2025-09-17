@@ -1,0 +1,146 @@
+hidden layer size: 32
+Training Path
+Score train: -502.0905988467623
+MSE train: 2561.7053660046454
+Score val: -503.39524313612674
+MSE val: 2554.4968090285865
+Parameters: {'hidden_layers': 32, 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False}
+--------------------------------------------------------------------------------
+hidden layer size: (32, 8)
+Training Path
+Score train: -2.4771324299800193
+MSE train: 17.70533741756862
+Score val: -2.4912190959595013
+MSE val: 17.681189824070824
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False}
+--------------------------------------------------------------------------------
+hidden layer size: (64, 16, 8)
+Training Path
+Score train: -1.5854697592257074
+MSE train: 13.16504774892169
+Score val: -1.61758401250581
+MSE val: 13.256687287008665
+Parameters: {'hidden_layers': (64, 16, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False}
+--------------------------------------------------------------------------------
+hidden layer size: (32, 8)
+Training Path
+Score train: 0.07140625748700313
+MSE train: 4.728340339666017
+Score val: 0.0677811533316851
+MSE val: 4.721198507591473
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False, 'alpha': 0.0001}
+--------------------------------------------------------------------------------
+hidden layer size: 8
+Training Path
+Score train: -356068.83387433423
+MSE train: 1813084.9715720837
+Score val: -358893.4007353048
+MSE val: 1817611.5138523171
+Parameters: {'hidden_layers': 8, 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False, 'alpha': 0.0001}
+--------------------------------------------------------------------------------
+Solver: adam
+Training Path
+Score train: 0.07140625748700313
+MSE train: 4.728340339666017
+Score val: 0.0677811533316851
+MSE val: 4.721198507591473
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False, 'alpha': 0.0001}
+--------------------------------------------------------------------------------
+Solver: sgd
+Training Path
+Max iterations: 300
+Training Path
+Score train: 0.07140625748700313
+MSE train: 4.728340339666017
+Score val: 0.0677811533316851
+MSE val: 4.721198507591473
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 300, 'early_stopping': False, 'alpha': 0.0001}
+--------------------------------------------------------------------------------
+Max iterations: 500
+Training Path
+Score train: 0.07140625748700313
+MSE train: 4.728340339666017
+Score val: 0.0677811533316851
+MSE val: 4.721198507591473
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False, 'alpha': 0.0001}
+--------------------------------------------------------------------------------
+Max iterations: 800
+Training Path
+Score train: 0.07140625748700313
+MSE train: 4.728340339666017
+Score val: 0.0677811533316851
+MSE val: 4.721198507591473
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 800, 'early_stopping': False, 'alpha': 0.0001}
+--------------------------------------------------------------------------------
+alpha: 0.0001
+Training Path
+Score train: 0.07140625748700313
+MSE train: 4.728340339666017
+Score val: 0.0677811533316851
+MSE val: 4.721198507591473
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False, 'alpha': 0.0001}
+--------------------------------------------------------------------------------
+alpha: 0.001
+Training Path
+Score train: -2.4771324299800193
+MSE train: 17.70533741756862
+Score val: -2.4912190959595013
+MSE val: 17.681189824070824
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False, 'alpha': 0.001}
+--------------------------------------------------------------------------------
+alpha: 0.01
+Training Path
+Score train: 0.5322056753177253
+MSE train: 2.3819789804700986
+Score val: 0.5298824644923152
+MSE val: 2.3808982353916845
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False, 'alpha': 0.01}
+--------------------------------------------------------------------------------
+Early stopping: True
+Training Path
+Score train: 0.5312881011577258
+MSE train: 2.386651209795723
+Score val: 0.5268002941531909
+MSE val: 2.396507808248126
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': True, 'alpha': 0.1}
+--------------------------------------------------------------------------------
+Early stopping: False
+Training Path
+Score train: -0.4542720200742998
+MSE train: 7.405060730601097
+Score val: -0.4601125679305673
+MSE val: 7.394702758119693
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False, 'alpha': 0.1}
+--------------------------------------------------------------------------------
+Early stopping: False
+Training Path
+Score train: -0.4542720200742998
+MSE train: 7.405060730601097
+Score val: -0.4601125679305673
+MSE val: 7.394702758119693
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': False, 'alpha': 0.1}
+--------------------------------------------------------------------------------
+Initial learning rate: 0.001
+Training Path
+Score train: 0.5639487051046777
+MSE train: 2.2203454895543815
+Score val: 0.5615389600977772
+MSE val: 2.220574723008053
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.001, 'max_iter': 500, 'early_stopping': True, 'alpha': 0.1}
+--------------------------------------------------------------------------------
+Initial learning rate: 0.01
+Training Path
+Score train: 0.5312881011577258
+MSE train: 2.386651209795723
+Score val: 0.5268002941531909
+MSE val: 2.396507808248126
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.01, 'max_iter': 500, 'early_stopping': True, 'alpha': 0.1}
+--------------------------------------------------------------------------------
+Initial learning rate: 0.05
+Training Path
+Score train: 0.19339906548927077
+MSE train: 4.107160712001037
+Score val: 0.186354827878355
+MSE val: 4.120685165354191
+Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.05, 'max_iter': 500, 'early_stopping': True, 'alpha': 0.1}
+--------------------------------------------------------------------------------

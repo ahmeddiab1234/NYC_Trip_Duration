@@ -156,10 +156,10 @@ class Preprocessing_Pipeling():
         elif option == 3:
             scaler = Normalizer()
         else:
-            if x_val:
+            if x_val is not None:
                 return None, x,x_val
             else:
-                return None, x
+                return None, 
         
         x = scaler.fit_transform(x)
         if x_val is not None:

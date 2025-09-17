@@ -2,4 +2,7 @@
 *.zip
 *.csv
 
-outputs.txt
+venv/
+*venv
+*__pycache__
+__pycache__/

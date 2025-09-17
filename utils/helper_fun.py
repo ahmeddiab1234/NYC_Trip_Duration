@@ -28,22 +28,28 @@ def split_data(x,t, split_sz=0.2):
     return x_train, x_val, t_train, t_val
 
 
-def save_model(model, threshold, model_save_name):
+def save_model(model, name='Ridge', type='val'):
     model_dict = {
         "model": model,
-        "threshold": threshold,
-        "model_name": model_save_name
     }
-    root_dir = os.getcwd()
+    if type=='val':
+        filename = fr'val_pkl/{name}.pkl'
+    else:
+        filename = fr'{name}.pkl'
 
-    with open(os.path.join(root_dir, 'model.pkl'), 'wb') as file:
+    with open(filename, 'wb') as file:
         pickle.dump(model_dict, file)
 
-def load_model():
-    with open("model.pkl", 'rb') as f:
+def load_model(name='Ridge',type='val'):
+    if type=='val':
+        filename = fr'val_pkl/{name}.pkl'
+    else:
+        filename = fr'{name}.pkl'
+
+    with open(filename, 'rb') as f:
         loaded_dict = pickle.load(f)
 
-    return loaded_dict['model'], loaded_dict['threshold'], loaded_dict['model_name']
+    return loaded_dict['model']
 
 
 def load_config():
@@ -52,7 +58,7 @@ def load_config():
     return config
 
 
-def log_result(text, name='linear_regression', filename=None):
+def log_result(text, name='Ridge', filename=None):
     if filename is None:
         filename=fr'logs/model_results_{name}.txt'
     os.makedirs(os.path.dirname(filename), exist_ok=True)

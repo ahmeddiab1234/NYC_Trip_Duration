@@ -1,0 +1,200 @@
+Fit Intercept True
+Training Path
+MSE for Train: 2.2121435577625084
+R2-score for Train: 0.5655594737869907
+MSE for Val: 2.215832294665243
+R2-score for Val: 0.5624753708572554
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Fit Intercept False
+Training Path
+MSE for Train: 2.2662674525301254
+R2-score for Train: 0.5549301395193159
+MSE for Val: 2.267028829546021
+R2-score for Val: 0.5523664176702138
+parameters: alpha = 1, fit-intercept = False
+--------------------------------------------------------------------------------
+Polynomial feature degree: 1
+Training Path
+MSE for Train: 2.2121435577625084
+R2-score for Train: 0.5655594737869907
+MSE for Val: 2.215832294665243
+R2-score for Val: 0.5624753708572554
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Polynomial feature degree: 2
+Training Path
+MSE for Train: 2.212655071538898
+R2-score for Train: 0.5654590181391643
+MSE for Val: 2.2163072885726405
+R2-score for Val: 0.5623815814790252
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Scaling Option: 1, deg: 1
+Training Path
+MSE for Train: 2.1156294283638952
+R2-score for Train: 0.5845137812575845
+MSE for Val: 2.1221987755375125
+R2-score for Val: 0.5809636701885366
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Scaling Option: 2, deg: 1
+Training Path
+MSE for Train: 2.115629425113344
+R2-score for Train: 0.5845137818959569
+MSE for Val: 2.122199671320066
+R2-score for Val: 0.5809634933128178
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Scaling Option: 3, deg: 1
+Training Path
+MSE for Train: 2.121902414797661
+R2-score for Train: 0.5832818361075289
+MSE for Val: 2.1201103758825908
+R2-score for Val: 0.5813760327516787
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Scaling Option: 4, deg: 1
+Training Path
+MSE for Train: 2.121902414797661
+R2-score for Train: 0.5832818361075289
+MSE for Val: 2.1201103758825903
+R2-score for Val: 0.5813760327516788
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Scaling Option: 1, deg: 2
+Training Path
+MSE for Train: 1.9729383933898335
+R2-score for Train: 0.6125367222202007
+MSE for Val: 1.978818485790019
+R2-score for Val: 0.6092746611643354
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Scaling Option: 2, deg: 2
+Training Path
+MSE for Train: 1.8107029192780388
+R2-score for Train: 0.6443979748483232
+MSE for Val: 1.8165953662200023
+R2-score for Val: 0.6413062415321868
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Scaling Option: 3, deg: 2
+Training Path
+MSE for Train: 2.210153268371162
+R2-score for Train: 0.5659503446088496
+MSE for Val: 2.2140298143548063
+R2-score for Val: 0.5628312775435419
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Scaling Option: 2, deg: 2
+Training Path
+MSE for Train: 1.8107029192780388
+R2-score for Train: 0.6443979748483232
+MSE for Val: 1.8165953662200023
+R2-score for Val: 0.6413062415321868
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Scaling Option: no scaling, deg: 2
+Training Path
+MSE for Train: 1.4242967662845678
+R2-score for Train: 0.7202838692557468
+MSE for Val: 1.429666003772069
+R2-score for Val: 0.7177069358523527
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+use best features: True
+Training Path
+MSE for Train: 107730.62475153543
+R2-score for Train: 0.6140162146588626
+MSE for Val: 108618.8045984991
+R2-score for Val: 0.6116386759451036
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+use best features: False
+Training Path
+MSE for Train: 1.4242967662845678
+R2-score for Train: 0.7202838692557468
+MSE for Val: 1.429666003772069
+R2-score for Val: 0.7177069358523527
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Apply log on trip duration: True
+Training Path
+MSE for Train: 1.4242967662845678
+R2-score for Train: 0.7202838692557468
+MSE for Val: 1.429666003772069
+R2-score for Val: 0.7177069358523527
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Apply log on trip duration: False
+Training Path
+MSE for Train: 1.4290279451602756
+R2-score for Train: 0.7193547180561524
+MSE for Val: 1.4346119858830741
+R2-score for Val: 0.7167303326165959
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Alpha: 1
+Training Path
+MSE for Train: 1.4242967662845678
+R2-score for Train: 0.7202838692557468
+MSE for Val: 1.429666003772069
+R2-score for Val: 0.7177069358523527
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Alpha: 2
+Training Path
+MSE for Train: 1.6334308416660075
+R2-score for Train: 0.6792122500839417
+MSE for Val: 1.6388378343922783
+R2-score for Val: 0.6764051514891808
+parameters: alpha = 2, fit-intercept = True
+--------------------------------------------------------------------------------
+Alpha: 3
+Training Path
+MSE for Train: 1.7215089789644957
+R2-score for Train: 0.6619146781512593
+MSE for Val: 1.7268838448970416
+R2-score for Val: 0.6590201272766807
+parameters: alpha = 3, fit-intercept = True
+--------------------------------------------------------------------------------
+Alpha: 5
+Training Path
+MSE for Train: 1.8015516036701598
+R2-score for Train: 0.6461951920109605
+MSE for Val: 1.8068825305979233
+R2-score for Val: 0.6432240783710603
+parameters: alpha = 5, fit-intercept = True
+--------------------------------------------------------------------------------
+Drop outlier: True
+Training Path
+MSE for Train: 1.4242967662845678
+R2-score for Train: 0.7202838692557468
+MSE for Val: 1.429666003772069
+R2-score for Val: 0.7177069358523527
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Drop outlier: False
+Training Path
+MSE for Train: 3.851115276408969
+R2-score for Train: 0.8112304708095092
+MSE for Val: 6.162411314216994
+R2-score for Val: 0.6211386362760148
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+solver: auto
+Training Path
+MSE for Train: 1.4242967662845678
+R2-score for Train: 0.7202838692557468
+MSE for Val: 1.429666003772069
+R2-score for Val: 0.7177069358523527
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+solver: lbfgs
+Training Path
+MSE for Train: 2.231693446286913
+R2-score for Train: 0.5617200919222176
+MSE for Val: 2.234973500749784
+R2-score for Val: 0.5586958659219557
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
