@@ -14,15 +14,21 @@ from sklearn.metrics import r2_score, mean_squared_error
 
 
 VAL_PATH = 'split/val.csv'
-NAME = 'LinearRegression'
+NAME = 'XGboost'
 
 if __name__=='__main__':
     df_val = load_df(VAL_PATH)
-    prepare = Preprocessing_Pipeling()
-    df = prepare.apply_modify_data(df_val, True, True, True, False)
-    df, x,t = load_x_t(df)
+    model, encode_season, encode_store, poly, scaler = load_model(NAME, 'val')
 
-    model, poly, scaler = load_model(NAME, 'val')
+    prepare = Preprocessing_Pipeling()
+    df_val = prepare.transform(df_val, encode_season, encode_store, True, True, True, False)
+    
+    target = 'log_trip_duration' if 'log_trip_duration' in df_val.columns else 'trip_duration'
+
+    t = df_val[target]
+    x = df_val.drop(columns=['log_trip_duration','trip_duration'], errors='ignore')
+    
+
     x = poly.transform(x)
     x = scaler.transform(x)
 
@@ -34,8 +40,5 @@ if __name__=='__main__':
 
 
 """
-xgboost regressor val: r2score: 0.997128983245669, mse_error: 0.014643436601412752
-Ridge regressor val: r2score: 0.6417990490195127, mse_error: 1.8269809496360412
-Linear regression val: r2score: 0.9426316050983026, mse_error: 0.29260381445025296
-
+XGboost Validation: r2score: 0.7245229869217307, mse_error: 0.17631537458273602
 """

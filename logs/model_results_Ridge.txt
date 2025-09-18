@@ -198,3 +198,24 @@ MSE for Val: 2.234973500749784
 R2-score for Val: 0.5586958659219557
 parameters: alpha = 1, fit-intercept = True
 --------------------------------------------------------------------------------
+Training Path
+MSE for Train: 0.22876845287297176
+R2-score for Train: 0.5915509299475109
+MSE for Val: 0.22857086944695623
+R2-score for Val: 0.5933647370361874
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Training Path
+MSE for Train: 0.22876845287297176
+R2-score for Train: 0.5915509299475109
+MSE for Val: 0.22857086944695623
+R2-score for Val: 0.5933647370361874
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
+Training Path
+MSE for Train: 0.22823946674324055
+R2-score for Train: 0.592351132761441
+MSE for Val: 0.23206161544314072
+R2-score for Val: 0.5917979978563301
+parameters: alpha = 1, fit-intercept = True
+--------------------------------------------------------------------------------
