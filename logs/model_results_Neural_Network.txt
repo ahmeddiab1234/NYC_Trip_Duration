@@ -144,3 +144,11 @@ Score val: 0.186354827878355
 MSE val: 4.120685165354191
 Parameters: {'hidden_layers': (32, 8), 'solver': 'adam', 'learning_rate_init': 0.05, 'max_iter': 500, 'early_stopping': True, 'alpha': 0.1}
 --------------------------------------------------------------------------------
+Training Path
+Training Path
+Score train: 0.587289458778906
+MSE train: 0.23107345909167473
+Score val: 0.5866933582097389
+MSE val: 0.23496358779119933
+Parameters: {'hidden_layers': [32, 8], 'solver': 'adam', 'learning_rate_init': 0.001, 'max_iter': 500, 'early_stopping': True, 'alpha': 0.1}
+--------------------------------------------------------------------------------

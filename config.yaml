@@ -33,7 +33,7 @@ Model:
     positive: False
 
   NeuralNetwork:
-    hidden_layers: (32, 8)
+    hidden_layers: [32, 8]
     solver: 'adam'
     init_lr: 0.001
     max_iter: 500

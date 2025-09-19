@@ -40,9 +40,9 @@ class PrepareData():
         t_val = self.val[target]
         x_val = self.val.drop(columns=['log_trip_duration','trip_duration'], errors='ignore')
 
-        poly, x_train, x_val = self.preprocess_pipeline.polynomial_feature(x_train, x_val, 2, True)
+        poly, x_train, x_val = self.preprocess_pipeline.polynomial_feature(x_train, x_val)
 
-        scaler, x_train, x_val = self.preprocess_pipeline.scaling(x_train, x_val, 2)
+        scaler, x_train, x_val = self.preprocess_pipeline.scaling(x_train, x_val)
 
         return x_train, x_val, encode_season, encode_store, t_train, t_val, poly, scaler
     
@@ -177,8 +177,8 @@ if __name__ == '__main__':
     # print(x_train.shape, x_val.shape, t_train.shape, t_val.shape) 
 
     train =Train(x_train, x_val, t_train, t_val)
-    model = train.try_xgboos()
-    save_model(model, encode_season, encode_store, poly, scaler, 'XGboost', 'test')
+    model = train.try_xgboost()
+    # save_model(model, encode_season, encode_store, poly, scaler, 'XGboost', 'test')
 
     print("Successful")
 
