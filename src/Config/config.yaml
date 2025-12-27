@@ -1,0 +1,22 @@
+RANDOM_STATE: 42
+
+
+
+preprocessing:
+  drop_outlier: True
+
+  training:
+    apply_log: True
+  inference:
+    apply_log: False
+
+  calculate_haversine: True
+  best_features: False
+
+  polynomial:
+    degree: 2
+    include_bias: True
+
+  scaling:
+    option: 2
+
