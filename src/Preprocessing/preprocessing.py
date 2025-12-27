@@ -1,23 +1,4 @@
 
-"""" 
-drop id 
-for target (trip duration)
-    - apply log 
-    - or use original
-handle date time feature(extract new feature)
-    caluclate season
-    year
-    hour
-    month
-    day-of-week
-
-handle outlier (cliping)
-caluclate haversine (from longitude & latitude )
-calculate best features
-preprocesing (standerscaler & minmaxscaler)
-apply polynomial feater 
-
-"""
 
 import os
 import sys
