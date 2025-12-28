@@ -128,6 +128,8 @@ class Preprocessing_Pipeline():
         df[fenum.SEASON.value] = label_encoder_season.transform(df[fenum.SEASON.value])
         df[fenum.STORE_AND_FWD_FLAG.value] = label_encoder_store.transform(df[fenum.STORE_AND_FWD_FLAG.value])
 
+        df.drop(columns=fenum.PICKUP_DATETIME, inplace=True)
+
         if drop_outlier:
             df = self.__apply_outlier_limit(df)
 
