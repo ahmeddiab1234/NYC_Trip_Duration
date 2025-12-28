@@ -26,7 +26,7 @@ def load_x_t(df: pd.DataFrame):
 
 
 def split_train_val(df: pd.DataFrame, split_sz=0.8):
-    sz = int(split_sz*df.shape()[0])
+    sz = int(split_sz*df.shape[0])
     train, val = df.iloc[:sz,:], df.iloc[sz:,:]
     return train, val
 

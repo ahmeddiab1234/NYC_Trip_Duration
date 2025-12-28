@@ -1,0 +1,23 @@
+Train Path
+Train Path
+MSE for Train: 0.16131067551580705
+R2Score for Train: 0.7118898186811815
+MSE for Val: 0.16333022017296459
+R2Score for Val: 0.7126981868248421
+Train Path
+MSE for Train: 0.16131067551580705
+R2Score for Train: 0.7118898186811815
+MSE for Val: 0.16333022017296459
+R2Score for Val: 0.7126981868248421
+Train Path
+MSE for Train: 0.16131067551580705
+R2Score for Train: 0.7118898186811815
+MSE for Val: 0.16333022017296459
+R2Score for Val: 0.7126981868248421
+Train Path
+MSE for Train: 0.16131067551580705
+R2Score for Train: 0.7118898186811815
+MSE for Val: 0.16333022017296459
+R2Score for Val: 0.7126981868248421
+{'hidden_layers': [32, 8], 'solver': 'adam', 'init_lr': 0.001, 'max_iter': 500, 'early_stopping': True, 'alpha': 0.1}
+--------------------------------------------------------------------------------

@@ -1,0 +1,28 @@
+Train Path
+MSE for Train: 0.095606593174414
+R2Score for Train: 0.8292411038099228
+MSE for Val: 0.13434438190300946
+R2Score for Val: 0.7636849783845491
+             n_estimators , {xgboost_parm['n_estimators']} 
+             learning_rate , {xgboost_parm['learning_rate']} 
+             max_depth , {xgboost_parm['max_depth']} 
+             min_child_weight , {xgboost_parm['min_child_weigth']} 
+             gamma , {xgboost_parm['gamma']} 
+             reg_alpha , {xgboost_parm['reg_alpha']} 
+             reg_lambda , {xgboost_parm['reg_lambda']} 
+         
+--------------------------------------------------------------------------------
+Train Path
+MSE for Train: 0.095606593174414
+R2Score for Train: 0.8292411038099228
+MSE for Val: 0.13434438190300946
+R2Score for Val: 0.7636849783845491
+             n_estimators , {xgboost_parm['n_estimators']} 
+             learning_rate , {xgboost_parm['learning_rate']} 
+             max_depth , {xgboost_parm['max_depth']} 
+             min_child_weight , {xgboost_parm['min_child_weigth']} 
+             gamma , {xgboost_parm['gamma']} 
+             reg_alpha , {xgboost_parm['reg_alpha']} 
+             reg_lambda , {xgboost_parm['reg_lambda']} 
+         
+--------------------------------------------------------------------------------
