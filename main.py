@@ -1,11 +1,4 @@
-"""  
-init api
-load model, path
-store preprocessing transformer 
-take input features 
-calculate target output (trip duration)
 
-"""
 
 import os
 import sys
