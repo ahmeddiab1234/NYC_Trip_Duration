@@ -73,12 +73,6 @@ if __name__ == '__main__':
 
     train = Train(x_train, x_val, t_train, t_val)
     model = train.try_xgboost()
-    # eval_model(model, x_train, t_train, 'train')
-    # eval_model(model, x_val, t_val, 'val')
-
-    save_model(model, encode_season, encode_store, poly, scaler, model_name, 'test')
-
-
     print("Successful")
 
 
