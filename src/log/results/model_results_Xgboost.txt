@@ -26,3 +26,8 @@ R2Score for Val: 0.7636849783845491
              reg_lambda , {xgboost_parm['reg_lambda']} 
          
 --------------------------------------------------------------------------------
+Model Testing : xgboost
+Model Testing : xgboost
+Model Testing : xgboost
+Model Testing : xgboost
+Model Testing : xgboost
