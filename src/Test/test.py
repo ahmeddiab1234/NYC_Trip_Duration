@@ -1,14 +1,3 @@
-"""
-Docstring for Test.test
-
-- import data
-- prepare data
-- transform data
-- test model prediction
-- log result 
-
-
-"""
 
 
 import os
