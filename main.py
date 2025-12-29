@@ -91,8 +91,8 @@ def predict_trip_duration_csv(file: UploadFile = File(...)):
         )
         x = poly.transform(x)
         x = scaler.transform(x)
-        pred = model.predict(x)[0]
         pred = model.predict(x)
+        pred = np.exp(pred)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
     
@@ -106,7 +106,7 @@ def predict_trip_duration_csv(file: UploadFile = File(...)):
         output, 
         media_type="text/csv",
         headers={
-            "Content-Discuribtion": "attachment; filename=predictions.csv"
+            "Content-Disposition": "attachment; filename=predictions.csv"
         }
     )
 
