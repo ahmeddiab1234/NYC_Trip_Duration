@@ -10,3 +10,5 @@ fastapi==0.128.0
 pydantic==2.12.5
 uvicorn==0.40.0
 python-multipart==0.0.21
+streamlit==1.52.2
+requests==2.32.5

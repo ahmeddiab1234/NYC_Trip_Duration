@@ -1,5 +1,3 @@
-
-
 import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
@@ -50,7 +48,7 @@ def start():
     return {"status": "Api is running"}
 
 
-@app.post("/predic")
+@app.post("/predict")
 def predict_trip_duration(data: TrainInput):
     df = pd.DataFrame([data.model_dump()])
     x = preprocess.transform(
@@ -81,7 +79,6 @@ def predict_trip_duration_csv(file: UploadFile = File(...)):
         df = pd.read_csv(file.file)
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"invalid csv file: {e}")
-
 
     try:
         x = preprocess.transform(
