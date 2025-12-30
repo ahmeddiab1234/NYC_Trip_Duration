@@ -1,0 +1,52 @@
+RANDOM_STATE: 42
+
+
+
+preprocessing:
+  drop_outlier: True
+
+  training:
+    apply_log: True
+  inference:
+    apply_log: False
+
+  calculate_haversine: True
+  best_features: False
+
+  polynomial:
+    degree: 2
+    include_bias: True
+
+  scaling:
+    option: 2
+
+
+Model:
+  model_name: 
+
+  linearRegression:
+    fit_intercept: True
+
+  Ridge:
+    alpha: 1
+    fit_intercept: True
+    solver:  'auto'
+    positive: False
+
+  NeuralNetwork:
+    hidden_layer: [32, 8]
+    solver: 'adam'
+    init_lr: 0.001
+    max_iter: 500
+    early_stopping: True
+    alpha: 0.1
+
+  XGBoost:
+    n_estimators: 300
+    learning_rate: 0.1
+    max_depth: 9
+    min_child_weigth: 3
+    gamma: 0
+    reg_alpha: 1
+    reg_lambda: 0
+

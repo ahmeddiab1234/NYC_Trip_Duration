@@ -1,0 +1,7 @@
+Train Path
+MSE for Train: 0.22823946674324444
+R2Score for Train: 0.5923511327614341
+MSE for Val: 0.2320616154431447
+R2Score for Val: 0.5917979978563233
+Parameters: alpha = 1, fit_intercept = True, sover = auto, positive = False
+--------------------------------------------------------------------------------
