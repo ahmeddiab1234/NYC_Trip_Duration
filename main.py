@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'src')))
 
 import pickle
 import numpy as np
@@ -9,7 +9,7 @@ import pandas
 from fastapi import FastAPI, UploadFile, File, HTTPException
 import io
 from fastapi.responses import StreamingResponse
-from Enum.model_enums import ModelEnum as menum
+from src.Enum.model_enums import ModelEnum as menum
 from pydantic import BaseModel
 from src.Preprocessing.preprocessing import Preprocessing_Pipeline
 
