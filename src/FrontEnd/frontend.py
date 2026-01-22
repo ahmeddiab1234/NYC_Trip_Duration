@@ -3,7 +3,9 @@ import pandas as pd
 import requests
 import io
 
-API_URL = "http://127.0.0.1:8000"
+# API_URL = "http://127.0.0.1:8000"
+API_URL = "https://nyc-trip-api.onrender.com"
+
 
 st.set_page_config(
     page_title="NYC Trip Duration Prediction",
@@ -110,3 +112,16 @@ with tab2:
 
             except Exception as e:
                 st.error(f"API Error: {e}")
+
+
+st.set_page_config(
+    page_title="NYC Trip Duration Predictor",
+    layout="wide",
+)
+
+st.markdown("""
+<style>
+footer {visibility: hidden;}
+header {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True)

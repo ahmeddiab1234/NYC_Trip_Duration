@@ -73,7 +73,7 @@ def predict_trip_duration(data: TrainInput):
 def predict_trip_duration_csv(file: UploadFile = File(...)):
     
     if not file.filename.endswith(".csv"):
-        return  HTTPException(status_code=400, detail=f"Only csv files are supported")
+        raise HTTPException(status_code=400, detail=f"Only csv files are supported")
 
     try:
         df = pd.read_csv(file.file)
