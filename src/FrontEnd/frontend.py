@@ -110,3 +110,16 @@ with tab2:
 
             except Exception as e:
                 st.error(f"API Error: {e}")
+
+
+st.set_page_config(
+    page_title="NYC Trip Duration Predictor",
+    layout="wide",
+)
+
+st.markdown("""
+<style>
+footer {visibility: hidden;}
+header {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True)

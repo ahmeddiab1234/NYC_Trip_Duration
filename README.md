@@ -187,7 +187,7 @@ uvicorn main:app --reload
 <p style="text-align:center;">
   <img src='src/utils/digrams/fastapi3.png' width="500" >
 </p>
-
+ 
 
 ### 10- run frontend
 ```bash
