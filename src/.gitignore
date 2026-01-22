@@ -10,6 +10,9 @@ src/data/
 # C extensions
 *.so
 
+utils/
+utils
+*.png
 # Distribution / packaging
 .Python
 build/
