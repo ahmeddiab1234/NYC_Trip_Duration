@@ -5,7 +5,6 @@ import io
 
 API_URL = "http://127.0.0.1:8000"
 
-
 st.set_page_config(
     page_title="NYC Trip Duration Prediction",
     layout="centered"
@@ -111,12 +110,3 @@ with tab2:
 
             except Exception as e:
                 st.error(f"API Error: {e}")
-
-
-
-st.markdown("""
-<style>
-footer {visibility: hidden;}
-header {visibility: hidden;}
-</style>
-""", unsafe_allow_html=True)
